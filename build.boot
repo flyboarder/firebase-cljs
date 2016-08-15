@@ -25,6 +25,11 @@
          :sources #{"src"}
          :description "Cljs bindings for Firebase API v3."})
 
+(deftast ci-deps
+  "Fetch dependencies for CI deployments."
+  []
+  identity)
+
 (deftask tests
   "Run code tests."
   []
