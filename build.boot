@@ -45,7 +45,6 @@
   []
   (comp
     (watch)
-    ;(checkout :dependencies (get-devdeps))
     (version :no-update true
              :minor 'inc
              :patch 'zero
