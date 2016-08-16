@@ -25,7 +25,7 @@
          :sources #{"src"}
          :description "Cljs bindings for Firebase API v3."})
 
-(deftast ci-deps
+(deftask ci-deps
   "Fetch dependencies for CI deployments."
   []
   identity)
