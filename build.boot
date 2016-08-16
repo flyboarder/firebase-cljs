@@ -31,6 +31,11 @@
   []
   identity)
 
+(deftask ci-deps
+  "Fetch dependencies for CI deployments."
+  []
+  identity)
+
 (deftask tests
   "Run code tests."
   []
