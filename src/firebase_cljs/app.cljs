@@ -4,15 +4,15 @@
 
 (defprotocol FirebaseApp
 
-  (name [_] "Get app name.")
+  (name [_] "Returns the Firebase Application name.")
 
-  (options [_] "Get app options.")
+  (options [_] "Returns the Firebase Application options.")
 
-  (get-auth [_] "Get app auth object.")
+  (get-auth [_] "Returns the Firebase Auth service for the Firebase Application.")
 
-  (get-db [_] "Get app database object.")
+  (get-db [_] "Returns the Firebase Database service for the Firebase Application.")
 
-  (get-storage [_] "Get app storage object."))
+  (get-storage [_] "Returns the Firebase Storage service for the Firebase Application."))
 
 
 (extend-type firebase.app.App

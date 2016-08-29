@@ -46,53 +46,56 @@
 
 (defprotocol MatchboxDatabase
 
-  (get-in [_ korks] "Get child reference as input type.")
+  (get-in [_ korks]
+    "Returns a Firebase Database Reference. Takes `korks`, a sequence of
+    keywordized paths.")
 
   (reset!
     [_ val]
     [_ val callback]
-    "Set a reference value. Accepts reference and promises.")
+    "Set a Firebase Database Reference value. Accepts reference and promises.")
 
   (swap!
     [_ fn]
     [_ fn callback]
-    "Swap a reference value. Accepts reference and promises.")
+    "Swap a Firebase Database Reference value. Accepts reference and promises.")
 
   (merge!
     [_ obj]
     [_ obj callback]
-    "Merge object into reference.")
+    "Merge object into a Firebase Database Reference.")
 
   (conj!
     [_ val]
     [_ val callback]
-    "Conjoin value onto reference.")
+    "Conjoin value onto a Firebase Database Reference.")
 
   (remove!
     [_]
     [_ callback]
-    "Remove reference.")
+    "Remove a Firebase Database Reference.")
 
   (listen
     [_ type callback]
     [_ korks type callback]
     [_ korks type callback failure]
-    "Listen to reference by event 'type'.")
+    "Listen to a Firebase Database Reference by event 'type'.")
 
   (listen-promise
     [_ type callback]
     [_ korks type callback]
-    "Listen to a promise reference by event 'type'.")
+    "Listen to a Firebase Promise Reference by event 'type'.")
 
   (listen-once
     [_ type callback]
     [_ korks type callback]
-    "Listen to reference event 'type' once.")
+    "Listen to a Firebase Database Reference event 'type' once.")
 
   (disable-listener!
     [_ event]
     [_ event callback]
-    "Disable listener by event (or event and callback)."))
+    "Disable a Firebase Database Reference listener by event (or event and
+    callback)."))
 
 ;; Matchbox API Helpers
 (defn korks->path [korks]
